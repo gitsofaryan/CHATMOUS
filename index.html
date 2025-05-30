@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
- 
-        <title>Chat-Mous</title>
-        <meta name="description" content="Tuts -*+=> Chat" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="title">
-            <span><-- Chat-Mous --></span>
-        </div>
-        <div id="wrapper" style="margin-top: 6rem;">
-            <div id="menu">
-                <p class="welcome">Welcome, <b></b></p>
-                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
-            </div>
- 
-            <div id="chatbox"></div>
- 
-            <form name="message" action="">
-                <input name="usermsg" type="text" id="usermsg" />
-                <button id="submitButton">Send</button>
-            </form>
-        </div>
-        <!-- <div id="loginform">
-            <p>Please enter your name to continue!</p>
-            <form action="index.php" method="post">
-              <label for="name">Name &mdash;</label>
-              <input type="text" name="name" id="name" />
-              <input type="submit" name="enter" id="enter" value="Enter" />
-            </form>
-          </div>
-       -->
-      <div id="wrapper">
-          <div id="menu">
-    </body>
-    <script src="./index.js"></script>
-</html>
+    <meta charset="utf-8" />
+    <title>Chat-Mous</title>
+    <meta name="description" content="Tuts -*+=> Chat" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="title">
+        <span>&lt;-- Chat-Mous --&gt;</span>
+    </div>
 
-  
+    <div id="loginform"> <!-- Shown by default -->
+        <p>Please enter your name to continue!</p>
+        <form id="loginFormAction"> <!-- Added ID -->
+            <label for="name">Name &mdash;</label>
+            <input type="text" name="name" id="name" />
+            <input type="submit" name="enter" id="enter" value="Enter" />
+        </form>
+    </div>
+
+    <div id="wrapper" class="hidden"> <!-- Main chat interface, initially hidden -->
+        <div id="menu">
+            <p class="welcome">Welcome, <b></b></p> <!-- Ensure b tag is here for JS to fill -->
+            <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+        </div>
+
+        <div id="chatbox"></div>
+
+        <form name="message" action=""> <!-- This form doesn't need an ID if we target its children directly for chat submission -->
+            <input name="usermsg" type="text" id="usermsg" />
+            <button type="button" id="submitButton">Send</button> <!-- Explicitly type="button" -->
+        </form>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>

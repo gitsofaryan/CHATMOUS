@@ -8,23 +8,32 @@
     margin: 20px auto;
     font-weight: 300;
     background: #212121;
+    color: #f0f0f0; /* General light text for dark theme */
   }
+
   .title{
-    margin-left: 44rem;
-    margin-top: 4rem;
+    margin: 4rem auto; /* Centered title */
+    text-align: center;
+    /* margin-top: 4rem; This was in the original, REMOVED as margin: 4rem auto handles it */
   }
+
   .title span{
     font-size: 25px;
-    border: 4px solid burlywood;
-    padding: 15px;
-    border-radius: 50px;
-    font-style: italic;
-    background: aliceblue;
-    font-family: cursive;
-    color: brown;
+    border: 2px solid #ff9800; /* Accent color border */
+    padding: 10px 20px; /* Adjusted padding */
+    border-radius: 10px; /* Less rounded */
+    background: #333; /* Consistent with new wrapper background */
+    color: #f0f0f0; /* Light text on dark background */
+    /* font-family: cursive; REMOVED */
+    /* font-style: italic; REMOVED */
   }
+
+  .hidden {
+    display: none !important;
+  }
+
   .wrapper{
-    margin-top: 6rem;
+    margin-top: 6rem; /* This is for the main chat wrapper */
   }
    
   form {
@@ -37,14 +46,15 @@
   form label {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #f0f0f0; /* Light text for label */
   }
    
   input {
-    font-family: "Lato";
+    font-family: "Lato"; /* Specific font for inputs */
   }
    
   a {
-    color: #0000ff;
+    color: #ff9800; /* Accent color for links */
     text-decoration: none;
   }
    
@@ -56,22 +66,30 @@
   #loginform {
     margin: 0 auto;
     padding-bottom: 25px;
-    background: #eee;
+    background: #333; /* Darker background for wrapper */
     width: 600px;
     max-width: 100%;
-    border: 2px solid #212121;
+    border: 2px solid #444; /* Slightly darker border */
     border-radius: 4px;
   }
    
   #loginform {
     padding-top: 18px;
     text-align: center;
+    margin-top: 2rem; /* Spacing from title, as #loginform is now directly under body */
+  }
+
+  #loginform label {
+    display: block; /* Label on its own line */
+    margin-bottom: 5px;
+    font-size: 1.2rem; /* Slightly smaller for login form */
   }
    
   #loginform p {
     padding: 15px 25px;
     font-size: 1.4rem;
     font-weight: bold;
+    color: #f0f0f0; /* Light text for login form paragraph */
   }
    
   #chatbox {
@@ -79,39 +97,64 @@
     margin: 0 auto;
     margin-bottom: 25px;
     padding: 10px;
-    background: #fff;
+    background: #444; /* Darker background for chatbox */
     height: 300px;
     width: 530px;
-    border: 1px solid #a7a7a7;
+    border: 1px solid #555; /* Adjusted border */
     overflow: auto;
     border-radius: 4px;
-    border-bottom: 4px solid #a7a7a7;
+    border-bottom: 4px solid #555; /* Adjusted border */
   }
    
   #usermsg {
     flex: 1;
     border-radius: 4px;
-    border: 1px solid #ff9800;
+    border: 1px solid #ff9800; /* Accent border */
+    background-color: #555; /* Darker input background */
+    color: #f0f0f0; /* Light text in input */
+    padding: 8px; /* Added padding */
   }
    
-  #name {
+  #name { /* Style for login form name input */
     border-radius: 4px;
     border: 1px solid #ff9800;
-    padding: 2px 8px;
+    padding: 8px; /* Consistent padding */
+    background-color: #555;
+    color: #f0f0f0;
+    display: block; /* Take full configured width and allow margin auto */
+    margin: 0 auto 10px auto; /* Center the input field */
+    width: 80%; /* Set a specific width */
   }
-   
-  #submitmsg,
-  #enter{
+
+  /* Styling for the Enter button on the login form */
+  #enter {
     background: #ff9800;
     border: 2px solid #e65100;
     color: white;
-    padding: 4px 10px;
+    padding: 8px 15px;
     font-weight: bold;
     border-radius: 4px;
+    font-size: 16px;
+    font-family: monospace;
+    margin-top: 10px; /* Space from the input field */
   }
    
+  /* Combined and updated styles for submit button */
+  #submitButton {
+    background: #ff9800; /* Accent color background */
+    border: 2px solid #e65100; /* Slightly darker accent border */
+    color: white;
+    padding: 8px 15px; /* Adjusted padding */
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 16px; /* Adjusted font size */
+    font-family: monospace; /* Consistent font */
+  }
+
+  /* Old #submitmsg, #enter selector removed as #submitButton is now styled */
+
   .error {
-    color: #ff0000;
+    color: #ff0000; /* Standard error color */
   }
    
   #menu {
@@ -121,33 +164,34 @@
    
   #menu p.welcome {
     flex: 1;
+    color: #f0f0f0; /* Light text for welcome message */
   }
    
-  a#exit {
+  a#exit { /* Style for exit link */
     color: white;
-    background: #c62828;
+    background: #c62828; /* Standard red for exit */
     padding: 4px 8px;
     border-radius: 4px;
     font-weight: bold;
   }
    
-  .msgln {
+  .msgln { /* This style seems to be for a different chat message structure, may not be used */
     margin: 0 0 5px 0;
   }
    
   .msgln span.left-info {
-    color: orangered;
+    color: orangered; /* Accent color, might be useful */
   }
    
   .msgln span.chat-time {
-    color: #666;
+    color: #aaa; /* Lighter gray for timestamp in dark theme */
     font-size: 60%;
     vertical-align: super;
   }
    
   .msgln b.user-name, .msgln b.user-name-left {
     font-weight: bold;
-    background: #546e7a;
+    background: #546e7a; /* Could be a user tag background */
     color: white;
     padding: 2px 4px;
     font-size: 90%;
@@ -156,9 +200,20 @@
   }
    
   .msgln b.user-name-left {
-    background: #ADD8E6;
+    background: #ADD8E6; /* This is light blue, contrasts with dark theme */
   }
-  #submitButton{
-    font-size: 15px;
-    padding: 2px;
+
+  /* Chat message styling - Adjusted for dark theme */
+  .chat {
+    padding: 8px 12px;
+    margin: 5px 0;
+    background-color: #505050; /* Darker background for individual messages */
+    border: 1px solid #606060; /* Subtle border */
+    border-radius: 4px;
+  }
+
+  .chat span {
+    color: #f0f0f0; /* Light text for readability */
+    font-size: 14px;
+    line-height: 1.4; /* Improved line spacing */
   }
