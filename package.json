@@ -1,0 +1,15 @@
+{
+  "name": "chat-mous",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Anonymous chat platform for introverts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
