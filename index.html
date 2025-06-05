@@ -2,35 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Chat-Mous</title>
-    <meta name="description" content="Tuts -*+=> Chat" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-Mous - Anonymous Chat</title>
+    <meta name="description" content="Anonymous chat platform for introverts" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="title">
-        <span>&lt;-- Chat-Mous --&gt;</span>
+        <span>Chat-Mous</span>
     </div>
 
-    <div id="loginform"> <!-- Shown by default -->
-        <p>Please enter your name to continue!</p>
-        <form id="loginFormAction"> <!-- Added ID -->
-            <label for="name">Name &mdash;</label>
-            <input type="text" name="name" id="name" />
-            <input type="submit" name="enter" id="enter" value="Enter" />
+    <div id="loginform">
+        <p>Welcome! Enter your name to start chatting</p>
+        <form id="loginFormAction">
+            <label for="name">Choose a username</label>
+            <input 
+                type="text" 
+                name="name" 
+                id="name" 
+                placeholder="Enter your username"
+                autocomplete="off"
+                required
+            />
+            <input type="submit" name="enter" id="enter" value="Join Chat" />
         </form>
     </div>
 
-    <div id="wrapper" class="hidden"> <!-- Main chat interface, initially hidden -->
+    <div id="wrapper" class="hidden">
         <div id="menu">
-            <p class="welcome">Welcome, <b></b></p> <!-- Ensure b tag is here for JS to fill -->
-            <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+            <p class="welcome">Welcome, <b></b></p>
+            <p class="logout"><a id="exit" href="#">Leave Chat</a></p>
         </div>
 
         <div id="chatbox"></div>
 
-        <form name="message" action=""> <!-- This form doesn't need an ID if we target its children directly for chat submission -->
-            <input name="usermsg" type="text" id="usermsg" />
-            <button type="button" id="submitButton">Send</button> <!-- Explicitly type="button" -->
+        <form name="message" action="">
+            <input 
+                name="usermsg" 
+                type="text" 
+                id="usermsg" 
+                placeholder="Type your message..."
+                autocomplete="off"
+            />
+            <button type="button" id="submitButton">Send</button>
         </form>
     </div>
 

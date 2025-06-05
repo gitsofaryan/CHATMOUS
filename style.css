@@ -1,219 +1,228 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: monospace;
-  }
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+}
    
-  body {
-    margin: 20px auto;
-    font-weight: 300;
-    background: #212121;
-    color: #f0f0f0; /* General light text for dark theme */
-  }
-
-  .title{
-    margin: 4rem auto; /* Centered title */
-    text-align: center;
-    /* margin-top: 4rem; This was in the original, REMOVED as margin: 4rem auto handles it */
-  }
-
-  .title span{
-    font-size: 25px;
-    border: 2px solid #ff9800; /* Accent color border */
-    padding: 10px 20px; /* Adjusted padding */
-    border-radius: 10px; /* Less rounded */
-    background: #333; /* Consistent with new wrapper background */
-    color: #f0f0f0; /* Light text on dark background */
-    /* font-family: cursive; REMOVED */
-    /* font-style: italic; REMOVED */
-  }
-
-  .hidden {
-    display: none !important;
-  }
-
-  .wrapper{
-    margin-top: 6rem; /* This is for the main chat wrapper */
-  }
-   
-  form {
-    padding: 15px 25px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-  }
-   
-  form label {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #f0f0f0; /* Light text for label */
-  }
-   
-  input {
-    font-family: "Lato"; /* Specific font for inputs */
-  }
-   
-  a {
-    color: #ff9800; /* Accent color for links */
-    text-decoration: none;
-  }
-   
-  a:hover {
-    text-decoration: underline;
-  }
-   
-  #wrapper,
-  #loginform {
-    margin: 0 auto;
-    padding-bottom: 25px;
-    background: #333; /* Darker background for wrapper */
-    width: 600px;
-    max-width: 100%;
-    border: 2px solid #444; /* Slightly darker border */
-    border-radius: 4px;
-  }
-   
-  #loginform {
-    padding-top: 18px;
-    text-align: center;
-    margin-top: 2rem; /* Spacing from title, as #loginform is now directly under body */
-  }
-
-  #loginform label {
-    display: block; /* Label on its own line */
-    margin-bottom: 5px;
-    font-size: 1.2rem; /* Slightly smaller for login form */
-  }
-   
-  #loginform p {
-    padding: 15px 25px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #f0f0f0; /* Light text for login form paragraph */
-  }
-   
-  #chatbox {
-    text-align: left;
-    margin: 0 auto;
-    margin-bottom: 25px;
-    padding: 10px;
-    background: #444; /* Darker background for chatbox */
-    height: 300px;
-    width: 530px;
-    border: 1px solid #555; /* Adjusted border */
-    overflow: auto;
-    border-radius: 4px;
-    border-bottom: 4px solid #555; /* Adjusted border */
-  }
-   
-  #usermsg {
-    flex: 1;
-    border-radius: 4px;
-    border: 1px solid #ff9800; /* Accent border */
-    background-color: #555; /* Darker input background */
-    color: #f0f0f0; /* Light text in input */
-    padding: 8px; /* Added padding */
-  }
-   
-  #name { /* Style for login form name input */
-    border-radius: 4px;
-    border: 1px solid #ff9800;
-    padding: 8px; /* Consistent padding */
-    background-color: #555;
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-weight: 400;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: #f0f0f0;
-    display: block; /* Take full configured width and allow margin auto */
-    margin: 0 auto 10px auto; /* Center the input field */
-    width: 80%; /* Set a specific width */
-  }
-
-  /* Styling for the Enter button on the login form */
-  #enter {
-    background: #ff9800;
-    border: 2px solid #e65100;
-    color: white;
-    padding: 8px 15px;
-    font-weight: bold;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: monospace;
-    margin-top: 10px; /* Space from the input field */
-  }
-   
-  /* Combined and updated styles for submit button */
-  #submitButton {
-    background: #ff9800; /* Accent color background */
-    border: 2px solid #e65100; /* Slightly darker accent border */
-    color: white;
-    padding: 8px 15px; /* Adjusted padding */
-    font-weight: bold;
-    border-radius: 4px;
-    font-size: 16px; /* Adjusted font size */
-    font-family: monospace; /* Consistent font */
-  }
-
-  /* Old #submitmsg, #enter selector removed as #submitButton is now styled */
-
-  .error {
-    color: #ff0000; /* Standard error color */
-  }
-   
-  #menu {
-    padding: 15px 25px;
     display: flex;
-  }
-   
-  #menu p.welcome {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.title {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.title span {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    color: white;
+    display: inline-block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#wrapper,
+#loginform {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#loginform {
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#loginform p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+#loginform label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #ff9800;
+}
+
+#name {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    border: 2px solid rgba(255, 152, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+#name:focus {
+    outline: none;
+    border-color: #ff9800;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
+}
+
+#enter {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#enter:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+#menu {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#menu p.welcome {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+#menu p.welcome b {
+    color: #ff9800;
+}
+
+#exit {
+    background: #dc3545;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#exit:hover {
+    background: #c82333;
+    text-decoration: none;
+}
+
+#chatbox {
+    height: 400px;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    border-radius: 0.5rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.chat {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.chat span {
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+form[name="message"] {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+#usermsg {
     flex: 1;
-    color: #f0f0f0; /* Light text for welcome message */
-  }
-   
-  a#exit { /* Style for exit link */
+    padding: 1rem;
+    border: 2px solid rgba(255, 152, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
     color: white;
-    background: #c62828; /* Standard red for exit */
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: bold;
-  }
-   
-  .msgln { /* This style seems to be for a different chat message structure, may not be used */
-    margin: 0 0 5px 0;
-  }
-   
-  .msgln span.left-info {
-    color: orangered; /* Accent color, might be useful */
-  }
-   
-  .msgln span.chat-time {
-    color: #aaa; /* Lighter gray for timestamp in dark theme */
-    font-size: 60%;
-    vertical-align: super;
-  }
-   
-  .msgln b.user-name, .msgln b.user-name-left {
-    font-weight: bold;
-    background: #546e7a; /* Could be a user tag background */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#usermsg:focus {
+    outline: none;
+    border-color: #ff9800;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
+}
+
+#submitButton {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    border: none;
     color: white;
-    padding: 2px 4px;
-    font-size: 90%;
-    border-radius: 4px;
-    margin: 0 5px 0 0;
-  }
-   
-  .msgln b.user-name-left {
-    background: #ADD8E6; /* This is light blue, contrasts with dark theme */
-  }
+    padding: 0 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-  /* Chat message styling - Adjusted for dark theme */
-  .chat {
-    padding: 8px 12px;
-    margin: 5px 0;
-    background-color: #505050; /* Darker background for individual messages */
-    border: 1px solid #606060; /* Subtle border */
-    border-radius: 4px;
-  }
+#submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
 
-  .chat span {
-    color: #f0f0f0; /* Light text for readability */
-    font-size: 14px;
-    line-height: 1.4; /* Improved line spacing */
-  }
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 152, 0, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 152, 0, 0.7);
+}
